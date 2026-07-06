@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Refresh rate: the cover panel's HWC default mode is 60 Hz although it
+         supports up to 165 Hz (inner panel defaults to 120 Hz). Stock handles
+         this with Moto's adaptive-refresh service on the product partition.
+         Peak 165 + default 0 lets DisplayModeDirector range up to each panel's
+         maximum instead of pinning the cover display at its 60 Hz default.
+         Verified on device: forcing 165 switches the cover panel cleanly. -->
+    <integer name="config_defaultPeakRefreshRate">165</integer>
+    <integer name="config_defaultRefreshRate">0</integer>
+
+    <!-- Device states from stock /vendor/etc/devicestate/device_state_configuration.xml:
+         0=CLOSED 1=TENT 2=STAND 3=LAPTOP 4=OPENED 5=REAR_DISPLAY_MODE
+         6=CONCURRENT_INNER_DEFAULT 7=REAR_DISPLAY_OUTER_DEFAULT 8=HALF_OPENED_INNER.
+         A16 primarily uses the semantic properties in that XML (OUTER_PRIMARY etc.),
+         but several framework paths still consult these arrays; populate them to
+         match the vendor property semantics. -->
+    <integer-array name="config_foldedDeviceStates">
+        <item>0</item> <!-- CLOSED -->
+        <item>1</item> <!-- TENT -->
+        <item>2</item> <!-- STAND -->
+    </integer-array>
+    <integer-array name="config_halfFoldedDeviceStates">
+        <item>3</item> <!-- LAPTOP -->
+        <item>8</item> <!-- HALF_OPENED_INNER -->
+    </integer-array>
+    <integer-array name="config_openDeviceStates">
+        <item>4</item> <!-- OPENED -->
+    </integer-array>
+    <integer-array name="config_rearDisplayDeviceStates">
+        <item>5</item> <!-- REAR_DISPLAY_MODE -->
+        <item>7</item> <!-- REAR_DISPLAY_OUTER_DEFAULT -->
+    </integer-array>
+</resources>

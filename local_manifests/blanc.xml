@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <remote name="zorrobyte" fetch="https://github.com/zorrobyte/" />
+    <project path="device/motorola/blanc"
+             name="android_device_motorola_blanc"
+             remote="zorrobyte"
+             revision="lineage-23.2" />
+</manifest>
