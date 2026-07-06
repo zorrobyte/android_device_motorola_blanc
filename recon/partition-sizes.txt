@@ -1,0 +1,6 @@
+boot_a sdd35 100663296 bytes
+init_boot_a sdd36 8388608 bytes
+vendor_boot_a sdd38 100663296 bytes
+dtbo_a sdd39 75497472 bytes
+recovery_a sdd37 134217728 bytes
+super sde36 28789702656 bytes

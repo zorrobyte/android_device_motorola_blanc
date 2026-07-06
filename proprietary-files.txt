@@ -1,0 +1,8 @@
+# Proprietary files for blanc — extracted from stock W3WBS36.36-48-5-1
+#
+# TODO: populate. Sources (in preference order):
+#   1. Rooted device over adb (Magisk root confirmed working)
+#   2. Stock firmware super.img: C:\ProgramData\RSA\Download\RomFiles\BLANC_G_W3WBS36.36_48_5_1_..._cid50_CFC.xml
+#
+# Start from the stock vendor VINTF fragment list (recon/vintf-fragments.txt) and the
+# sm8750-common proprietary-files layout as a template.
