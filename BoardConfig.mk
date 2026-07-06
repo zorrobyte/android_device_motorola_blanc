@@ -32,6 +32,11 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
+# Milestone 1 (system-only build, stock vendor+boot kept on device): use the
+# stock kernel Image (extracted from factory boot.img W3WBS36.36-48-5-1) so
+# check_vintf has a kernel to validate. Replaced by the from-source kernel
+# (kernel-build harness) when we move past the stock-vendor phase.
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 
 # Partitions — sizes read from device (recon/partition-sizes.txt)
 BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296
