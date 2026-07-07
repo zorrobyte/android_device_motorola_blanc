@@ -35,4 +35,11 @@
         <item>5</item> <!-- REAR_DISPLAY_MODE -->
         <item>7</item> <!-- REAR_DISPLAY_OUTER_DEFAULT -->
     </integer-array>
+
+    <!-- Folded selfie fix: the Moto CamX HAL rejects opening logical front camera 1
+         when it receives DEVICE_STATE_FOLDED without the front-covered bit
+         (verified: clearing the fold bit lets camera 1 open while physically folded).
+         Report the inner front camera covered when folded so the HAL routes the
+         logical front camera to the outer/cover lens. -->
+    <bool name="config_cameraFrontCoveredWhenFolded">true</bool>
 </resources>

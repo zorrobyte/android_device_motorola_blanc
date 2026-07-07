@@ -46,5 +46,8 @@ PRODUCT_SOONG_NAMESPACES += \
 #  - kernel modules lists (modules.load / vendor_ramdisk) — from stock vendor_boot + vendor_dlkm
 #  - foldable config (device_state_configuration.xml, display settings)
 
+# Lindroid (LXC + EVDI): container runtime, LindroidUI, perspectived, sepolicy
+$(call inherit-product, vendor/lindroid/lindroid.mk)
+
 # Proprietary vendor blobs
 $(call inherit-product-if-exists, vendor/motorola/blanc/blanc-vendor.mk)
